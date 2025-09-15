@@ -47,16 +47,16 @@ export default function Learn() {
   // Handle answer selection
   const handleAnswer = (choice) => {
     if (choice.title === currentQuestion.title) {
-      setFeedback("✅ Correct!");
+      setFeedback(" Correct!");
       setScore((prev) => prev + 1);
     } else {
-      setFeedback(`❌ Wrong! Correct answer: ${currentQuestion.title}`);
+      setFeedback(`Wrong! Correct answer: ${currentQuestion.title}`);
     }
   };
 
   return (
     <div className="px-6 py-10">
-      <h1 className="text-4xl font-bold text-center text-blue-600 mb-8">
+      <h1 className="text-4xl font-bold text-center text-sea-600 mb-8">
         Learn Sign Language
       </h1>
 
@@ -65,7 +65,7 @@ export default function Learn() {
         <button
           onClick={() => setQuizMode(false)}
           className={`px-4 py-2 rounded-lg font-semibold ${
-            !quizMode ? "bg-blue-600 text-white" : "bg-gray-200 text-gray-800"
+            !quizMode ? "bg-cyan-600 text-white" : "bg-gray-200 text-gray-800"
           }`}
         >
           Learn Mode
@@ -73,7 +73,7 @@ export default function Learn() {
         <button
           onClick={startQuiz}
           className={`px-4 py-2 rounded-lg font-semibold ${
-            quizMode ? "bg-blue-600 text-white" : "bg-gray-200 text-gray-800"
+            quizMode ? "bg-cyan-600 text-white" : "bg-gray-200 text-gray-800"
           }`}
         >
           Quiz Mode
@@ -121,7 +121,7 @@ export default function Learn() {
               <button
                 key={opt.id}
                 onClick={() => handleAnswer(opt)}
-                className="px-4 py-2 bg-gray-200 rounded-lg font-semibold hover:bg-blue-500 hover:text-white transition"
+                className="px-4 py-2 bg-gray-200 rounded-lg font-semibold hover:bg-sea-500 hover:text-white transition"
               >
                 {opt.title}
               </button>
@@ -134,7 +134,7 @@ export default function Learn() {
 
           <button
             onClick={generateQuestion}
-            className="mt-6 bg-blue-600 text-white px-4 py-2 rounded-lg font-semibold hover:bg-blue-700"
+            className="mt-6 bg-cyan-600 text-white px-4 py-2 rounded-lg font-semibold hover:bg-sea-700"
           >
             Next Question
           </button>
